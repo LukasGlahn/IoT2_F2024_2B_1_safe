@@ -1,0 +1,25 @@
+import time
+from umqttsimple import MQTTClient
+import ubinascii
+import machine
+import network
+
+
+ssid = ''
+password = ''
+mqtt_server = ''
+client_id = ubinascii.hexlify(machine.unique_id())
+
+last_message = 0
+message_interval = 60
+
+station = network.WLAN(network.STA_IF)
+
+station.active(True)
+station.connect(ssid, password)
+
+while station.isconnected() == False:
+  pass
+
+print('Connection successful')
+print(station.ifconfig())

@@ -1,0 +1,23 @@
+{%extends 'bace.html'%}
+{%block title%}rum{% endblock %} 
+
+
+{% block head%} 
+<meta http-equiv="refresh" content="60">
+{% endblock %}
+
+{% block content%}
+
+
+
+<div class="fs-1 p-3 mt-5 mb-5 text-center">
+    <h2  style="color: #faec26;">{{'%s'%(skole_navn)}}</h2>
+    <h2  style="color: #faec26;">{{'Lokale-%s'%(rum)}}</h2>
+</div>
+
+<img class="img-fluid float-left"  src='data:image/png;base64,{{rum_temperatur}}'/>
+<img class="img-fluid float-right"  src='data:image/png;base64,{{rum_humidity}}'/>
+<img class="img-fluid float-left"  src='data:image/png;base64,{{rum_CO2}}'/>
+<img class="img-fluid float-right"  src='data:image/png;base64,{{rum_VOC}}'/>
+
+{% endblock %}

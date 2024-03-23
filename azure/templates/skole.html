@@ -1,0 +1,20 @@
+{%extends 'bace.html'%}
+{%block title%}home{% endblock %} 
+
+{% block content%}
+
+<h2 class="fs-1 p-3 mt-5 mb-5 text-center" style="color: #faec26;">{{skole}}</h2>
+
+<div class="row fs-5 p-5 mt-5 mb-5" data-bs-theme="dark">
+    {%for i in range(0, lenth)%} 
+    
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4>{{rum[i]['navn']}}</h4>
+          <a type="button" class="btn btn-warning" style="background-color: #5A5560; color: #faec26;" href="{{'/rum/%s'%(rum[i]['id'])}}">GO!</a>
+        </div>
+      </div>
+    {%endfor%} 
+  </div>
+
+{% endblock %}
